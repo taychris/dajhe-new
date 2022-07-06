@@ -1,0 +1,14 @@
+.editor {
+    text-align: center;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+  }
+.quill {
+  border-radius: 25%;
+}
+
+.ql-toolbar.ql-snow:first-child {
+  display: none !important;
+}
