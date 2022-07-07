@@ -21,10 +21,18 @@ const QuillEditor = (props) => {
   useEffect(() => {
     if (quill) {
       quill.on('text-change', (delta, oldDelta, source) => {
-        props.setInfo(quill.root.innerHTML) // Get innerHTML using quill
+        // console.log(quillRef.current.firstChild.innerHTML)
+        props.setInfo(quillRef.current.firstChild.innerHTML) // Get innerHTML using quill
       });
     }
   }, [quill]);
+
+  useEffect(() => {
+    if(props.edit && props.info && quill && quillRef.current.firstChild.innerHTML == '<p><br></p>') {
+      const items = quill.clipboard.convert(props.info)
+      quill.setContents(items)
+    }
+  }, [props.info, quill])
 
   return (
     <div className="w-full text-gray-800">

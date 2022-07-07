@@ -8,7 +8,6 @@ const Nav = ({navigateEvent}) => {
 
   const handleClick = () => {
     setIsOpen(!isOpen)
-    console.log(menuValue);
   }
 
   return (
