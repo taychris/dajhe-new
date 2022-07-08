@@ -6,6 +6,7 @@ import { useRouter } from "next/router"
 import { auth } from "../common/firebase"
 import { useUserData } from '../common/hooks';
 import toast, { Toaster } from "react-hot-toast";
+import { StatusOfflineIcon, IdentificationIcon, HomeIcon } from '@heroicons/react/outline'
 
 const Nav = ({navigateEvent}) => {
   const router = useRouter()
@@ -38,17 +39,20 @@ const Nav = ({navigateEvent}) => {
           </div>
           {location && location.includes("/dashboard") ?  
             <ul className={`${isOpen ? "h-[90%]" : "h-0"} flex flex-col items-center justify-center gap-8 duration-500 overflow-hidden md:h-auto md:flex-row`}>
-                <Link href={'/#home'}>
-                  <li className="text-3xl font-extralight cursor-pointer duration-500 md:text-lg hover:text-[#AFFC41]">Home</li>
-                </Link>
                 <Link href={'/dashboard'}>
                   <li className="text-3xl font-extralight cursor-pointer duration-500 md:text-lg hover:text-[#AFFC41]">Dashboard</li>
                 </Link>
                 <Link href={'/dashboard/create-post'}>
-                  <li className="text-3xl font-extralight cursor-pointer duration-500 md:text-lg hover:text-[#AFFC41]">Create post</li>
+                  <li className="text-3xl font-extralight cursor-pointer duration-500 md:text-lg hover:text-[#AFFC41]">Nový projekt</li>
                 </Link>
-                <li onClick={() => {
-                                    setIsOpen(!isOpen)}} className="text-xl font-extralight cursor-pointer duration-500 md:text-lg hover:text-[#AFFC41]"><SignOutButton router={router}/></li>
+                <li onClick={() => {setIsOpen(!isOpen)}} className="text-xl font-extralight cursor-pointer duration-500 md:text-lg hover:text-[#AFFC41]">
+                  <SignOutButton router={router}/>
+                </li>
+                <Link href={'/#home'}>
+                  <li className="group rounded-full bg-[#a0e939] p-2 cursor-pointer">
+                    <HomeIcon className="w-5 h-5 group-hover:stroke-[#241127] stroke-slate-100 group-hover:scale-110 duration-500"/>
+                  </li>
+                </Link>
             </ul>
             : 
             <ul className={`${isOpen ? "h-[90%]" : "h-0"} flex flex-col items-center justify-center gap-8 duration-500 overflow-hidden md:h-auto md:flex-row`}>
@@ -65,7 +69,9 @@ const Nav = ({navigateEvent}) => {
                       <li className="text-3xl font-extralight cursor-pointer duration-500 md:text-lg hover:text-[#AFFC41]">Contact</li>
                     </Link>
                     {userData.user && <Link href={'/dashboard'}>
-                      <li  className="max-w-max rounded-full text-[#241127] bg-[#AFFC41] px-8 py-2 font-thin md:text-sm hover:opacity-80 duration-500 cursor-pointer">Dashboard</li>
+                      <button className="group rounded-full bg-[#a0e939] p-2">
+                        <IdentificationIcon className="w-5 h-5 group-hover:stroke-[#241127] stroke-slate-100 group-hover:scale-110 duration-500"/>
+                      </button>
                     </Link>}
                 </ul>
 
@@ -90,7 +96,9 @@ const SignOutButton = props => {
   return (
     <>
       <Toaster/>
-      <button onClick={signOut} className="max-w-max rounded-full text-[#241127] bg-[#AFFC41] px-8 py-2 font-thin md:text-sm hover:opacity-80 duration-500">Sign out</button>
+      <button onClick={signOut} className="group rounded-full border-2 border-[#a0e939] p-2 hover:bg-[#a0e939] duration-500">
+        <StatusOfflineIcon className="w-5 h-5 stroke-[#a0e939] group-hover:stroke-[#241127] group-hover:scale-110 duration-500"/>
+      </button>
     </>
   )
 }
