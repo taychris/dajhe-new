@@ -13,7 +13,11 @@ function MyApp({ Component, pageProps }) {
   const userData = useUserData();
 
   if(pageProps.protected && !userData.user) {
-    return <Layout>No access here pal.</Layout>
+    return <Layout>
+      <div className="scroll-m-14 min-h-screen flex flex-col items-center justify-center">
+        <p>Loading...</p>
+      </div>
+    </Layout>
   }
 
   return (

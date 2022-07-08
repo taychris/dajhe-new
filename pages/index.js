@@ -1,5 +1,6 @@
 // import Head from 'next/head'
 // import Image from 'next/image'
+import Link from 'next/link';
 import { useContext, useEffect } from 'react';
 import { MenuContext } from '../common/menuContext';
 import ContactForm from '../components/home/ContactForm';
@@ -22,7 +23,9 @@ export default function Home() {
           <span className="text-[#AFFC41]">business.</span>
         </h1>
         <p className="mb-8 text-xl font-thin md:mb-10 md:text-3xl">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam consectetur atque est nemo ab facere.</p>
-        <button className="max-w-max rounded-full text-[#241127] bg-[#AFFC41] px-8 py-2 font-thin md:text-xl hover:opacity-80 duration-500">consult now.</button>
+        <Link href={'#contact'}>
+          <button className="max-w-max rounded-full text-[#241127] bg-[#AFFC41] px-8 py-2 font-thin md:text-xl hover:opacity-80 duration-500">consult now.</button>
+        </Link>
       </div>
       <div className="flex w-full items-center px-5 md:w-1/2">
         <img className="max-h-96 w-full object-contain" src="https://github.com/taychris/lots-of-images/blob/main/hero-img.png?raw=true" alt="" />
