@@ -12,6 +12,22 @@ function MyApp({ Component, pageProps }) {
 
   const userData = useUserData();
 
+  //this is used, because the page doesnt
+  //need the wrapper on the project page
+  const getContent = () => {
+    if(pageProps.layout === false) {
+      return <Component {...pageProps}/>
+    } else {
+      return ( 
+        <Layout> 
+          <Component {...pageProps} />
+        </Layout>
+      )
+    }
+
+  }
+
+  //routing guard
   if(pageProps.protected && !userData.user) {
     return <Layout>
       <div className="scroll-m-14 min-h-screen flex flex-col items-center justify-center">
@@ -24,9 +40,7 @@ function MyApp({ Component, pageProps }) {
     <UserContext.Provider value={{userData}}>
       <MenuContext.Provider value={{menuValue, setMenuValue}}>
         <Nav/>
-        <Layout> 
-          <Component {...pageProps} />
-        </Layout>
+        {getContent()}
         <Footer/>
       </MenuContext.Provider>
     </UserContext.Provider>

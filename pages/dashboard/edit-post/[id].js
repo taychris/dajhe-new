@@ -44,7 +44,7 @@ const EditPost = () => {
       title,
       thumbnail,
       info,
-      createdAt: serverTimestamp()
+      // createdAt: serverTimestamp()
     }
 
     await firestore.collection('posts').doc(id).update(post).then(() => {

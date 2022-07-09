@@ -91,3 +91,43 @@ html {
     background: rgba(0, 0, 0, 0.205) !important;
     backdrop-filter: blur(5px);
 }
+
+.info-content h1 {
+    font-weight: 700;
+    font-size: 60px;
+    color: #AFFC41;
+}
+
+.info-content h2 {
+    font-weight: 700;
+    font-size: 48px;
+    color: #AFFC41;
+}
+
+.info-content ul {
+    list-style: circle;
+    margin-left: 10px;
+}
+
+.info-content ul,
+.info-content p {
+    font-weight: 200;
+    color: #fff;
+}
+
+.info-content a {
+    border-bottom: 1px solid #fff;
+    transition: .5s ease-in-out;
+}
+
+.info-content a:hover {
+    opacity: 0.8;
+}
+
+.full-screen {
+    height: calc(100vh - 56px);
+}
+
+[data-rmiz-wrap="visible"] {
+    height: 100% !important;
+}

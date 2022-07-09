@@ -19,12 +19,12 @@ const Dashboard = () => {
             })
             setPosts(tempDoc)
         })
-    }, [posts])
+    }, [])
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-start mt-24">
         <div className="w-full mb-14">
-            <h1 className="text-[#AFFC41] text-5xl font-bold md:text-6xl">Dashboard.</h1>
+            <h1 className="text-[#AFFC41] text-5xl font-bold md:text-7xl">Dashboard.</h1>
         </div>
         <div className="w-full mb-6">
             <Link href={'/dashboard/create-post'}>
@@ -85,7 +85,7 @@ const Results = props => {
     }
 
     return (
-        <div className="mb-10 flex flex-col gap-8 md:flex-row w-full flex-wrap">
+        <div className="mb-10 flex flex-col gap-9 md:justify-start md:flex-row w-full flex-wrap">
             {props.posts.map(post => {
                 return (
                     <div key={post.id} className="flex flex-col w-full md:max-w-[30%] items-center overflow-hidden relative">

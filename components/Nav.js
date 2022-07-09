@@ -45,14 +45,17 @@ const Nav = ({navigateEvent}) => {
                 <Link href={'/dashboard/create-post'}>
                   <li className="text-3xl font-extralight cursor-pointer duration-500 md:text-lg hover:text-[#AFFC41]">Nový projekt</li>
                 </Link>
-                <li onClick={() => {setIsOpen(!isOpen)}} className="text-xl font-extralight cursor-pointer duration-500 md:text-lg hover:text-[#AFFC41]">
-                  <SignOutButton router={router}/>
-                </li>
-                <Link href={'/#home'}>
-                  <li className="group rounded-full bg-[#a0e939] p-2 cursor-pointer">
-                    <HomeIcon className="w-5 h-5 group-hover:stroke-[#241127] stroke-slate-100 group-hover:scale-110 duration-500"/>
+                <div className="flex gap-8 flex-row">
+                  <li onClick={() => {setIsOpen(!isOpen)}} className="text-xl font-extralight cursor-pointer duration-500 md:text-lg hover:text-[#AFFC41]">
+                    <SignOutButton router={router}/>
                   </li>
-                </Link>
+                  <Link href={'/#home'}>
+                    <li className="group rounded-full bg-[#a0e939] p-2 cursor-pointer">
+                      <HomeIcon className="w-6 h-5 group-hover:stroke-[#241127] stroke-slate-100 group-hover:scale-110 duration-500"/>
+                    </li>
+                  </Link>
+                </div>
+                  
             </ul>
             : 
             <ul className={`${isOpen ? "h-[90%]" : "h-0"} flex flex-col items-center justify-center gap-8 duration-500 overflow-hidden md:h-auto md:flex-row`}>
@@ -68,11 +71,17 @@ const Nav = ({navigateEvent}) => {
                     <Link href={"/#contact"}>
                       <li className="text-3xl font-extralight cursor-pointer duration-500 md:text-lg hover:text-[#AFFC41]">Contact</li>
                     </Link>
-                    {userData.user && <Link href={'/dashboard'}>
-                      <button className="group rounded-full bg-[#a0e939] p-2">
-                        <IdentificationIcon className="w-5 h-5 group-hover:stroke-[#241127] stroke-slate-100 group-hover:scale-110 duration-500"/>
-                      </button>
-                    </Link>}
+                    {userData.user &&
+                    <div className="flex gap-8 flex-row">
+                      <li onClick={() => {setIsOpen(!isOpen)}} className="text-xl font-extralight cursor-pointer duration-500 md:text-lg hover:text-[#AFFC41]">
+                        <SignOutButton router={router}/>
+                      </li> 
+                      <Link href={'/dashboard'}>
+                        <button className="group rounded-full bg-[#a0e939] p-2">
+                          <IdentificationIcon className="w-6 h-5 group-hover:stroke-[#241127] stroke-slate-100 group-hover:scale-110 duration-500"/>
+                        </button>
+                      </Link>
+                    </div>}
                 </ul>
 
             }
