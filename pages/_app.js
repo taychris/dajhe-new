@@ -18,6 +18,7 @@ function MyApp({ Component, pageProps }) {
     if(pageProps.layout === false) {
       return <Component {...pageProps}/>
     } else {
+      // console.log(userData.user.email)
       return ( 
         <Layout> 
           <Component {...pageProps} />
@@ -29,6 +30,14 @@ function MyApp({ Component, pageProps }) {
 
   //routing guard
   if(pageProps.protected && !userData.user) {
+    return <Layout>
+      <div className="scroll-m-14 min-h-screen flex flex-col items-center justify-center">
+        <p>Loading...</p>
+      </div>
+    </Layout>
+  }
+
+  if(userData.user && pageProps.protected && userData.user.email !== 'christopher.szab@gmail.com') {
     return <Layout>
       <div className="scroll-m-14 min-h-screen flex flex-col items-center justify-center">
         <p>Loading...</p>
