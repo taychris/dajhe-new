@@ -3,14 +3,21 @@ import toast, { Toaster } from "react-hot-toast";
 import { useContext } from 'react';
 import { UserContext } from '../common/userContext';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 const Enter = () => {
   const {userData} = useContext(UserContext);
 
   return (
-    <div className="scroll-m-14 min-h-screen flex flex-col items-center justify-center">
-        {!userData.user && <SignInButton/>}
-    </div>
+    <>
+      <Head>
+        <title>Dajhe - Login</title>
+        <meta name="robots" content="noindex"/>
+      </Head>
+      <div className="scroll-m-14 min-h-screen flex flex-col items-center justify-center">
+          {!userData.user && <SignInButton/>}
+      </div>
+    </>
   )
 }
 
@@ -40,20 +47,5 @@ const SignInButton = () => {
       </>
     );
 }
-
-// const SignOutButton = () => {
-//     const signOut = async () => {
-//         await auth.signOut().then(() => {
-//             toast.success('Signed out.')
-//         })
-//         .catch((e) => {
-//             console.log(e)
-//             toast.error(e.message)
-//         })
-//     };
-
-//     return <button onClick={signOut}>Sign Out</button>;
-// }
-
 
 export default Enter

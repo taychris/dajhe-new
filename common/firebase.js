@@ -4,13 +4,13 @@ import 'firebase/compat/firestore';
 import 'firebase/compat/storage';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCDDTFgT3q2hrbl-VGeHwDVQS76FkBmAXg",
+    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
     authDomain: "dajhe-test.firebaseapp.com",
     projectId: "dajhe-test",
     storageBucket: "dajhe-test.appspot.com",
-    messagingSenderId: "1035758477717",
-    appId: "1:1035758477717:web:f17e063313b48fc387169c",
-    measurementId: "G-97PV1MP6JQ"
+    messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+    measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
 };
   
 if (!firebase.apps.length) {

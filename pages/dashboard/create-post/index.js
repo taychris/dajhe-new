@@ -5,6 +5,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { useRouter } from "next/router";
 import { CheckIcon, CloudUploadIcon } from '@heroicons/react/outline'
 import Image from "next/image";
+import Head from "next/head";
 
 const CreatePost = () => {
   const router = useRouter();
@@ -78,6 +79,10 @@ const CreatePost = () => {
 
   return (
     <>
+      <Head>
+        <title>Dajhe - Pridať projekt</title>
+        <meta name="robots" content="noindex"/>
+      </Head>
       <div className="scroll-m-14 min-h-screen flex flex-col items-center justify-start mt-16">
         <h1 className="text-[#AFFC41] text-5xl font-bold mb-10 mt-14 md:text-6xl ">Nový projekt.</h1>
         <div className="flex flex-col max-w-3xl w-full mb-10">

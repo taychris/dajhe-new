@@ -38,16 +38,27 @@ const Portfolio = () => {
       })
   }, [])
   return (
-    <section id="portfolio" className="flex full-screen flex-col items-center justify-center pt-16 bg-[#241127] md:flex-row md:items-start">
-        <div className="w-full order-2 h-full md:w-1/2 md:order-1">
-            <ControlledZoom isZoomed={isZoomed} onZoomChange={handleZoomChange} overlayBgColorEnd={'rgba(36, 17, 39, 0.7)'}>
-                <img className={`h-full ${isZoomed === true && '!object-contain'} object-cover`} src={posts.downloadURL}/>
-            </ControlledZoom>
-        </div>
-        <div className="w-[90%] order-1 info-content my-10 md:w-1/2 md:order-2 md:my-0 md:px-10 md:h-min">
-            {parse(`${posts.info}`)}
-        </div>
-    </section>
+    <>
+      <Head>
+        <title>Dajhe - Portfolio</title>
+        <meta name="description" content="Ponúkame všetko, čo potrebujete pre identitu vašej značky. Tvorba webu, grafický dizajn a fotografia."/>
+        <meta property="og:title" content="Dajhe - Portfolio"/>
+        <meta property="og:url" content="https://dajhe-new.vercel.app/"/>
+        <meta property="og:description" content="Ponúkame všetko, čo potrebujete pre identitu vašej značky. Tvorba webu, grafický dizajn a fotografia."/>
+        <meta property="og:image" content="https://github.com/taychris/lots-of-images/blob/main/dajhe_thumbnail.jpg?raw=true"/>
+        <meta name="robots" content="noindex"/>
+      </Head>
+      <section id="portfolio" className="flex full-screen flex-col items-center justify-center pt-16 bg-[#241127] md:flex-row md:items-start">
+          <div className="w-full order-2 h-full md:w-1/2 md:order-1">
+              <ControlledZoom isZoomed={isZoomed} onZoomChange={handleZoomChange} overlayBgColorEnd={'rgba(36, 17, 39, 0.7)'}>
+                  <img className={`h-full ${isZoomed === true && '!object-contain'} object-cover`} src={posts.downloadURL}/>
+              </ControlledZoom>
+          </div>
+          <div className="w-[90%] order-1 info-content my-10 md:w-1/2 md:order-2 md:my-0 md:px-10 md:h-min">
+              {parse(`${posts.info}`)}
+          </div>
+      </section>
+    </>
   )
 }
 

@@ -1,3 +1,5 @@
+import toast from "react-hot-toast";
+
 const ContactForm = () => {
   const handleSubmit = async (event) => {
     // Stop the form from submitting and refreshing the page.
@@ -14,7 +16,7 @@ const ContactForm = () => {
     const JSONdata = JSON.stringify(data)
 
     // API endpoint where we send form data.
-    const endpoint = '/api/form'
+    const endpoint = '/api/contact'
 
     // Form the request for sending data to the server.
     const options = {
@@ -29,17 +31,24 @@ const ContactForm = () => {
     }
 
     // Send the form data to our forms API on Vercel and get a response.
-    // const response = await fetch(endpoint, options)
+    const response = await fetch(endpoint, options)
 
     // Get the response data from server as JSON.
     // If server returns the name submitted, that means the form works.
-    // const result = await response.json()
-    console.log(`Is this your full name: ${JSONdata}`)
+    const result = await response.json()
+    if(response.status === 200) {
+      toast.success('Čoskoro o nás budete počut.')
+      event.target.reset()
+    }
+    if(response.status === 500) {
+      console.log(response.json())
+      toast.error('Internal server error.')
+    }
   }
 
   return (
     <>
-        <form className="flex flex-col max-w-xl w-full relative z-0" onSubmit={handleSubmit}>
+        <form className="flex flex-col max-w-xl w-full relative z-0" id="contact" onSubmit={handleSubmit}>
             <label className="text-lg font-thin mb-1" htmlFor="fullName">Full name</label>
             <input className="rounded-full mb-4 text-[#241127] px-2 py-1 shadow-md shadow-slate-500 font-extralight" name="fullName" type="text" required/>
 

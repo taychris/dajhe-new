@@ -1,4 +1,4 @@
-// import Head from 'next/head'
+import Head from 'next/head'
 // import Image from 'next/image'
 import Link from 'next/link';
 import { useEffect } from 'react';
@@ -26,6 +26,14 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>Dajhe - Domov</title>
+        <meta name="description" content="Ponúkame všetko, čo potrebujete pre identitu vašej značky. Tvorba webu, grafický dizajn a fotografia."/>
+        <meta property="og:title" content="Dajhe - Domov"/>
+        <meta property="og:url" content="https://dajhe-new.vercel.app/"/>
+        <meta property="og:description" content="Ponúkame všetko, čo potrebujete pre identitu vašej značky. Tvorba webu, grafický dizajn a fotografia."/>
+        <meta property="og:image" content="https://github.com/taychris/lots-of-images/blob/main/dajhe_thumbnail.jpg?raw=true"/>
+      </Head>
     {/* hero section */}
       <section id="home" className="my-20 flex min-h-screen flex-col justify-center md:my-0 md:flex-row">
         <div data-aos={"fade-right"} data-aos-once={"false"} className="mb-16 flex w-full max-w-xl flex-col justify-center md:mb-0 md:w-1/2">

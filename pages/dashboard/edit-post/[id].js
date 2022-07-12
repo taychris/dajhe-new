@@ -4,6 +4,7 @@ import { firestore, storage, STATE_CHANGED } from '../../../common/firebase';
 import toast, { Toaster } from "react-hot-toast";
 import { useRouter } from 'next/router'
 import { CheckIcon, CloudUploadIcon } from '@heroicons/react/outline'
+import Head from "next/head";
 
 const EditPost = () => {
   const router = useRouter()
@@ -108,6 +109,10 @@ const EditPost = () => {
 
   return (
     <>
+      <Head>
+        <title>Dajhe - Zmeniť projekt</title>
+        <meta name="robots" content="noindex"/>
+      </Head>
       <div className="scroll-m-14 min-h-screen flex flex-col items-center justify-center">
         <h1 className="text-[#AFFC41] text-4xl font-bold mb-10 mt-14 md:text-6xl ">Zmeniť projekt.</h1>
         <form className="flex flex-col max-w-3xl w-full mb-10">
