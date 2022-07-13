@@ -58,7 +58,7 @@ const ContactForm = () => {
             <label className="text-lg font-thin mb-1" htmlFor="message">Message</label>
             <textarea className="rounded-2xl text-[#241127] px-2 py-1 shadow-md shadow-slate-500 mb-8 font-extralight" name="message" id="" cols="30" rows="5" required></textarea>
             
-            <button className="max-w-max rounded-full text-[#241127] bg-[#AFFC41] px-8 py-2 m-auto font-thin md:text-xl hover:opacity-80 duration-500" type="submit">
+            <button className="max-w-max rounded-full text-[#241127] bg-[#AFFC41] px-8 py-2 m-auto font-light md:text-xl hover:text-white duration-500" type="submit">
               send.
             </button>
             <img className="absolute -z-10 bottom-[20%] right-[-20%] w-96 md:right-[-30%]" src="https://github.com/taychris/lots-of-images/blob/main/paper_plane.png?raw=true"/>

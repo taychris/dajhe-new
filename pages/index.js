@@ -45,7 +45,7 @@ export default function Home() {
           </h1>
           <p className="mb-8 text-xl font-thin md:mb-10 md:text-3xl">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam consectetur atque est nemo ab facere.</p>
           <Link href={'#contact'}>
-            <button className="max-w-max rounded-full text-[#241127] bg-[#AFFC41] px-8 py-2 font-thin md:text-xl hover:opacity-80 duration-500">consult now.</button>
+            <button className="max-w-max rounded-full text-[#241127] bg-[#AFFC41] px-8 py-2 font-light md:text-xl hover:text-white duration-500">consult now.</button>
           </Link>
         </div>
         <div data-aos={"fade-left"} className="flex w-full items-center px-5 md:w-1/2">
@@ -71,7 +71,9 @@ export default function Home() {
             </div>
             <div>
               <h1 className="mb-6 max-w-min text-4xl font-normal md:text-5xl">Web Development</h1>
-              <button className="text-xl text-[#AFFC41] group hover:opacity-80 duration-500">Explore <span className="group-hover:ml-2 duration-500">&rarr;</span></button>
+              <Link href={'/portfolio'}>
+                <button className="text-xl text-[#AFFC41] group hover:opacity-80 duration-500">Explore <span className="group-hover:ml-2 duration-500">&rarr;</span></button>
+              </Link>
             </div>
           </div>
 
@@ -81,7 +83,9 @@ export default function Home() {
             </div>
             <div>
               <h1 className="mb-6 max-w-min text-4xl font-normal md:text-5xl">Graphic Design</h1>
-              <button className="text-xl text-[#AFFC41] group hover:opacity-80 duration-500">Explore <span className="group-hover:ml-2 duration-500">&rarr;</span></button>
+              <Link href={'/portfolio'}>
+                <button className="text-xl text-[#AFFC41] group hover:opacity-80 duration-500">Explore <span className="group-hover:ml-2 duration-500">&rarr;</span></button>
+              </Link>
             </div>
           </div>
 
@@ -91,7 +95,9 @@ export default function Home() {
             </div>
             <div>
               <h1 className="mb-6 max-w-min text-4xl font-normal md:text-5xl">Video Editing</h1>
-              <button className="text-xl text-[#AFFC41] group hover:opacity-80 duration-500">Explore <span className="group-hover:ml-2 duration-500">&rarr;</span></button>
+              <Link href={'/portfolio'}>
+                <button className="text-xl text-[#AFFC41] group hover:opacity-80 duration-500">Explore <span className="group-hover:ml-2 duration-500">&rarr;</span></button>
+              </Link>
             </div>
           </div>
         </div>
@@ -107,7 +113,9 @@ export default function Home() {
           <RecentProjects/>
         </div>
         <Link href={'/portfolio'}>
-          <button data-aos={"fade-up"} className="max-w-max rounded-full text-[#241127] bg-[#AFFC41] px-8 py-2 font-thin md:text-xl hover:opacity-80 duration-500">portfolio.</button>
+          <div data-aos={"fade-up"}>
+            <button className="max-w-max rounded-full text-[#241127] bg-[#AFFC41] px-8 py-2 font-light md:text-xl hover:text-white !duration-500">portfolio.</button>
+          </div>
         </Link>
       </section>
 

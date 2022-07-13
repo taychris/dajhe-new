@@ -28,7 +28,7 @@ const Nav = ({navigateEvent}) => {
   return (
     <>
       
-        <nav className={`fixed z-10 flex flex-col w-screen ${isOpen ? "h-screen backdrop-blur-md" : "h-14"} justify-center items-center px-10 text-white bg-[#2411276c] backdrop-blur-sm duration-500 md:flex-row md:justify-between md:!h-14`}>
+        <nav className={`shadow-lg shadow-[#24112764] fixed z-10 flex flex-col w-screen justify-center items-center px-10 py-2 text-white backdrop-blur-sm md:flex-row md:justify-between`}>
           <div className="w-full h-[10%] flex justify-between items-center md:h-auto md:w-auto">
             <Link href={"/#home"}>
               <h1 className="font-bold text-2xl cursor-pointer"><span className="text-[#AFFC41]">dajhe</span>.</h1>
@@ -38,7 +38,7 @@ const Nav = ({navigateEvent}) => {
             </div>
           </div>
           {location && location.includes("/dashboard") ?  
-            <ul className={`${isOpen ? "h-[90%]" : "h-0"} flex flex-col items-center justify-center gap-8 duration-500 overflow-hidden md:h-auto md:flex-row`}>
+            <ul className={`${isOpen && "!h-sceen"} h-0 flex flex-col items-center justify-center gap-8 !duration-500 overflow-hidden md:h-auto md:flex-row`}>
                 <Link href={'/dashboard'}>
                   <li className="text-3xl font-extralight cursor-pointer duration-500 md:text-lg hover:text-[#AFFC41]">Dashboard</li>
                 </Link>
@@ -58,7 +58,7 @@ const Nav = ({navigateEvent}) => {
                   
             </ul>
             : 
-            <ul className={`${isOpen ? "h-[90%]" : "h-0"} flex flex-col items-center justify-center gap-8 duration-500 overflow-hidden md:h-auto md:flex-row`}>
+            <ul className={`${isOpen && "!h-screen"} h-0 flex flex-col items-center justify-center gap-8 !duration-500 overflow-hidden md:h-auto md:flex-row`}>
                     <Link href={"/#home"}>
                       <li className="text-3xl font-extralight cursor-pointer duration-500 md:text-lg hover:text-[#AFFC41]">Home</li>
                     </Link>
