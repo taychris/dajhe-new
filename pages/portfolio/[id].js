@@ -34,7 +34,6 @@ const Portfolio = () => {
         }
       })
       .catch((e) => {
-        toast.error(e.message)
         console.log(e)
       })
   }, [])
@@ -50,13 +49,15 @@ const Portfolio = () => {
         <meta name="robots" content="noindex"/>
       </Head>
       <section id="portfolio" className="flex full-screen flex-col items-center justify-center pt-14 bg-gradient-to-bl from-[#241127] via-[#4e0759] to-[#241127] md:flex-row md:items-start">
-          <div className="w-full order-2 h-screen md:w-1/2 md:order-1">
+          <div className="w-full order-2 h-full md:w-1/2 md:order-1">
               <ControlledZoom isZoomed={isZoomed} onZoomChange={handleZoomChange} overlayBgColorEnd={'rgba(36, 17, 39, 0.7)'}>
                   <img className={`h-full ${isZoomed === true && '!object-contain'} object-cover`} src={posts.downloadURL}/>
               </ControlledZoom>
           </div>
-          <div className="w-[90%] h-screen order-1 info-content my-10 md:w-1/2 md:order-2 md:px-10 md:h-min">
-              {parse(`${posts.info}`)}
+          <div className="w-[90%] h-full order-1 py-10 md:w-1/2 md:order-2 md:px-10 md:h-min">
+              <span className="overflow-auto info-content text-xl">
+                  {parse(`${posts.info}`)}
+              </span>
           </div>
       </section>
     </>

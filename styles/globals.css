@@ -106,7 +106,7 @@ html {
 }
 
 .info-content ul {
-    list-style: circle;
+    list-style: circle !important;
     margin-left: 10px;
 }
 
